@@ -45,3 +45,4 @@ temp/
 library/common-test/charts/
 .cr-release-packages/
 library/common-test/chart.lock
+truecharts_catalog/
