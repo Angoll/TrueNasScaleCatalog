@@ -21,7 +21,7 @@ function getTrueChartsCatalog() {
 getTrueChartsCatalog
 
 # 2. copy the new vaultwarden stable version
-cp -a truecharts_catalog/stable/vaultwarden ./stable/vaultwarden
+cp -a truecharts_catalog/stable/vaultwarden/ ./stable/vaultwarden
 
 # 3. overwite the ix_values to use sqllite
 find ./stable/vaultwarden -type f -name "ix_values.yaml" -print0 |
