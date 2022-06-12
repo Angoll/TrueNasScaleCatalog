@@ -28,6 +28,7 @@ find ./stable/vaultwarden -type f -name "ix_values.yaml" -print0 |
     while IFS= read -r -d '' ixValueFile; do
         echo "Updating: ${ixValueFile}"
         yq eval-all '. as $item ireduce ({}; . * $item )' "${ixValueFile}" "${IX_VALUES_OVERWRITE_FILE}" | sponge "${ixValueFile}"
+        yq 'del .env.DATABASE_URL' "${ixValueFile}" | sponge "${ixValueFile}"
     done
 
 # 4. update catalog capabilities
