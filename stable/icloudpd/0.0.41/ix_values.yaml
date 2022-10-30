@@ -124,10 +124,10 @@ service:
 persistence:
   config:
     enabled: true
-    mountPath: /config
+    mountPath: /.local
   data:
     enabled: true
-    mountPath: /home/apps/iCloud
+    mountPath: /data
 
 portal:
   enabled: false
