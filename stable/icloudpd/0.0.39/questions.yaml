@@ -182,18 +182,25 @@ questions:
                 description: 2FA
               - value: Web
                 description: Web
-        - variable: icloud_china
-          label: iCloud China
-          description: Set this to true to use icloud.com.cm instead of icloud.com as the download source.
-          schema:
-            type: boolean
-            default: true
         - variable: synchronisation_interval
           label: Synchronization Interval
-          description: This is the number of seconds between synchronizations.
+          description: Time between synchronizations.
           schema:
             type: int
             default: 86400
+            enum:
+              - value: 21600
+                description: 6 hours
+              - value: 43200
+                description: 12 hours
+              - value: 86400
+                description: 24 hours
+              - value: 129600
+                description: 36 hours
+              - value: 172800
+                description: 48 hours
+              - value: 604800
+                description: 7 days
         - variable: synchronisation_delay
           label: Synchronization Delay
           description: This is the number of minutes to delay the first synchronization.
