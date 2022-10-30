@@ -1,7 +1,7 @@
 image:
   pullPolicy: IfNotPresent
   repository: angoll/icloudpd_sync
-  tag: test
+  tag: latest
 
 podSecurityContext:
   runAsGroup: 0
@@ -105,6 +105,8 @@ env:
   NOTIFICATION_TYPE: "{{ .Values.icloudpd.notification_type }}"
   THREADS_NUM: "{{ .Values.icloudpd.threads_num }}"
   KEEP_LAST_X_LOGS: "{{ .Values.icloudpd.keep_last_x_logs }}"
+  NOTIFICATION_BEFORE_2FA_EXPIRATION_DAYS: "{{ .Values.icloudpd.notification_before_2fa_expiration_days }}"
+  LOG_LEVEL: "{{ .Values.icloudpd.log_level }}"
 
 probes:
   liveness:

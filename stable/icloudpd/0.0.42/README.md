@@ -23,7 +23,7 @@ Kubernetes: `>=1.16.0-0`
 
 | Repository | Name | Version |
 |------------|------|---------|
-| https://library-charts.truecharts.org | common | 10.6.11 |
+| <https://library-charts.truecharts.org> | common | 10.6.11 |
 
 ## Installing the Chart
 
@@ -90,10 +90,10 @@ If you need to connect this Chart to other Charts on TrueNAS SCALE, please refer
 
 ## Support
 
-- Please check our [quick-start guides for TrueNAS SCALE](https://truecharts.org/docs/manual/SCALE%20Apps/Important-MUST-READ).
-- See the [Website](https://truecharts.org)
-- Check our [Discord](https://discord.gg/tVsPTHWTtr)
-- Open a [issue](https://github.com/truecharts/apps/issues/new/choose)
+* Please check our [quick-start guides for TrueNAS SCALE](https://truecharts.org/docs/manual/SCALE%20Apps/Important-MUST-READ).
+* See the [Website](https://truecharts.org)
+* Check our [Discord](https://discord.gg/tVsPTHWTtr)
+* Open a [issue](https://github.com/truecharts/apps/issues/new/choose)
 
 ---
 

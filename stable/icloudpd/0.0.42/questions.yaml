@@ -196,7 +196,7 @@ questions:
           schema:
             type: int
             default: 86400
-        - variable: notification_days
+        - variable: notification_before_2fa_expiration_days
           label: Notification Days
           description: When your cookie is nearing expiration, this is the number of days in advance it should notify you.
           schema:
@@ -264,12 +264,6 @@ questions:
           schema:
             type: int
             default: 90
-        - variable: skip_check
-          label: Skip Check
-          description: Set this to True skip the check for new files. The check can have issues with large libraries.
-          schema:
-            type: boolean
-            default: false
         - variable: skip_live_photos
           label: Skip Live Photos
           description: If this is set, it will skip downloading live photos.
@@ -288,18 +282,18 @@ questions:
           schema:
             type: boolean
             default: false
-        - variable: download_notifications
-          label: Download Notifications
-          description: Specifies whether notifications with a short summary should be sent for file downloads.
-          schema:
-            type: boolean
-            default: false
-        - variable: delete_notifications
-          label: Delete Notifications
-          description: Specifies whether notifications with a short summary should be sent for file deletions.
-          schema:
-            type: boolean
-            default: false
+        # - variable: download_notifications
+        #   label: Download Notifications
+        #   description: Specifies whether notifications with a short summary should be sent for file downloads.
+        #   schema:
+        #     type: boolean
+        #     default: false
+        # - variable: delete_notifications
+        #   label: Delete Notifications
+        #   description: Specifies whether notifications with a short summary should be sent for file deletions.
+        #   schema:
+        #     type: boolean
+        #     default: false
         - variable: delete_accompanying
           label: Delete Accompanying
           description: Tells the script to delete files which accompany the HEIC files that are downloaded.
@@ -316,7 +310,6 @@ questions:
           label: Notification Type
           description: This specifies the method that is used to send notifications. You need to manually add the environments variables
             for your selected notification type, using the "Extra Environment Variables Section"
-            More info about the variables needed here. https://github.com/boredazfcuk/docker-icloudpd/blob/master/NOTIFICATIONS.md
           schema:
             type: string
             default: No Type
@@ -337,6 +330,21 @@ questions:
           schema:
             type: int
             default: 1
+        - variable: log_level
+          label: Ouput log level
+          description: Number of cpu threads for downloading
+          schema:
+            type: string
+            default: info
+          enum:
+              - value: debug
+                description: Debug
+              - value: info
+                description: Info
+              - value: warning
+                description: Warning
+              - value: error
+                description: Error
   - variable: tz
     label: Timezone
     group: Container Configuration
