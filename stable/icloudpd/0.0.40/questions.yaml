@@ -171,17 +171,6 @@ questions:
             type: string
             required: true
             default: ""
-        - variable: authentication_type
-          label: Authentication Type
-          description: This is the type of authentication that is enabled on your iCloud account
-          schema:
-            type: string
-            default: 2FA
-            enum:
-              - value: 2FA
-                description: 2FA
-              - value: Web
-                description: Web
         - variable: synchronisation_interval
           label: Synchronization Interval
           description: Time between synchronizations.
@@ -323,12 +312,6 @@ questions:
           schema:
             type: boolean
             default: false
-        - variable: command_line_options
-          label: Command Line Options
-          description: This is for additional command line options you want to pass to the iCloud PD application.
-          schema:
-            type: string
-            default: ""
         - variable: notification_type
           label: Notification Type
           description: This specifies the method that is used to send notifications. You need to manually add the environments variables
@@ -340,29 +323,21 @@ questions:
             enum:
               - value: ""
                 description: No type
-              - value: Prowl
-                description: Prowl
-              - value: Pushover
-                description: Pushover
               - value: Telegram
                 description: Telegram
-              - value: Webhook
-                description: Webhook
-              - value: Openhab
-                description: Openhab
-              - value: Dingtalk
-                description: Dingtalk
-              - value: Discord
-                description: Discord
-              - value: IYUU
-                description: IYUU
-              - value: WeCom
-                description: WeCom
-              - value: Gotify
-                description: Gotify
-              - value: Bark
-                description: Bark
-  - variable: TZ
+        - variable: keep_last_x_logs
+          label: Keep last logs files
+          description: Keep only the last X logs
+          schema:
+            type: int
+            default: 15
+        - variable: threads_num
+          label: Number of cpu threads
+          description: Number of cpu threads for downloading
+          schema:
+            type: int
+            default: 1
+  - variable: tz
     label: Timezone
     group: Container Configuration
     schema:
@@ -1510,13 +1485,13 @@ questions:
             default: false
             show_subquestions_if: true
             subquestions:
-              - variable: PUID
+              - variable: puid
                 label: Process User ID - PUID
                 description: When supported by the container, this sets the User ID running the Application Process. Not supported by all Apps
                 schema:
                   type: int
                   default: 568
-              - variable: UMASK
+              - variable: umask
                 label: UMASK
                 description: When supported by the container, this sets the UMASK for the App. Not supported by all Apps
                 schema:
@@ -2602,32 +2577,3 @@ questions:
                             schema:
                               type: string
                               required: true
-  - variable: docs
-    group: Documentation
-    label: Please read the documentation at https://truecharts.org
-    description: Please read the documentation at
-      <br /><a href="https://truecharts.org">https://truecharts.org</a>
-    schema:
-      additional_attrs: true
-      type: dict
-      attrs:
-        - variable: confirmDocs
-          label: I have checked the documentation
-          schema:
-            type: boolean
-            default: true
-  - variable: donateNag
-    group: Documentation
-    label: Please consider supporting TrueCharts, see https://truecharts.org/sponsor
-    description: Please consider supporting TrueCharts, see
-      <br /><a href="https://truecharts.org/sponsor">https://truecharts.org/sponsor</a>
-    schema:
-      additional_attrs: true
-      type: dict
-      attrs:
-        - variable: confirmDonate
-          label: I have considered donating
-          schema:
-            type: boolean
-            default: true
-            hidden: true
