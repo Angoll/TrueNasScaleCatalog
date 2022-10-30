@@ -1,7 +1,7 @@
 image:
   pullPolicy: IfNotPresent
   repository: angoll/icloudpd_sync
-  tag: latest
+  tag: test
 
 podSecurityContext:
   runAsGroup: 0
