@@ -853,6 +853,8 @@ questions:
                   enum:
                     - value: pvc
                       description: PVC
+                    - value: simpleHP
+                      description: "To support migration only"
                     - value: hostPath
                       description: Host Path
                     - value: emptyDir
